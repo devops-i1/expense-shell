@@ -1,5 +1,10 @@
+echo disable defult Nodejs version module
 dnf module disable nodejs -y &>>/tmp/expense.log
+
+echo enable Nodejs module for v20
 dnf module enable nodejs:20 -y &>>/tmp/expense.log
+
+echo install Nodejs
 dnf install nodejs -y &>>/tmp/expense.log
 
 cp backend.service /etc/systemd/system/backend.service &>>/tmp/expense.log
