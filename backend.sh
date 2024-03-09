@@ -8,3 +8,13 @@ cd /app
 unzip /tmp/backend.zip
 cd /app
 npm install
+
+
+cp backend.service /etc/systemd/system/backend.service
+
+systemctl daemon-reload
+systemctl enable backend
+systemctl start backend
+
+dnf install mysql -y
+mysql -h <MYSQL-SERVER-IPADDRESS> -uroot -pExpenseApp@1 < /app/schema/backend.sql
