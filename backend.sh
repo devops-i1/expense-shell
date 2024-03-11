@@ -1,3 +1,5 @@
+mysql-root-password=$1
+
 echo disable defult Nodejs version module
 dnf module disable nodejs -y &>>/tmp/expense.log
 
@@ -25,4 +27,4 @@ systemctl enable backend &>>/tmp/expense.log
 systemctl start backend &>>/tmp/expense.log
 
 dnf install mysql -y &>>/tmp/expense.log
-mysql -h 172.31.10.122 -uroot -pExpenseApp@1 < /app/schema/backend.sql &>>/tmp/expense.log
+mysql -h 172.31.10.122 -uroot -p${mysql-root-password} < /app/schema/backend.sql &>>/tmp/expense.log
