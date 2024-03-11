@@ -11,7 +11,7 @@ dnf module disable nodejs -y &>>/tmp/expense.log
 echo $?
 
 Print_Task_Heading "Enable Nodejs module for v20"
-dnf module enable nodejs:20 -y C
+dnf module enable nodejs:20 -y &>>/tmp/expense.log
 echo $?
 
 Print_Task_Heading "Install Nodejs"
