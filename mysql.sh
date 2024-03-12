@@ -22,4 +22,4 @@ echo 'show databases' |mysql -h 172.31.11.15 -uroot -p${mysql_root_password} &>>
 if [ $? -ne 0 ]; then
   mysql_secure_installation --set-root-pass ${mysql_root_password} &>>$LOG
 fi
-Check_Status $?
+Check_status $?
