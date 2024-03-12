@@ -22,5 +22,6 @@ unzip /tmp/frontend.zip &>>$LOG
 Check_status $?
 
 Print_Task_Heading "Restart nginx"
+systemctl enable nginx &>>$LOG
 systemctl restart nginx &>>$LOG
 Check_status $?
