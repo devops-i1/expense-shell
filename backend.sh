@@ -54,5 +54,5 @@ dnf install mysql -y &>>$LOG
 Check_status $?
 
 Print_Task_Heading "Load schema"
-mysql -h  172.31.11.15 -uroot -p${mysql_root_password} < /app/schema/backend.sql &>>$LOG
+mysql -h  mysql-dev.akhilsaidevops.online -uroot -p${mysql_root_password} < /app/schema/backend.sql &>>$LOG
 Check_status $?
