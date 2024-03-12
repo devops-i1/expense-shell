@@ -1,4 +1,4 @@
-LOG=&>>/tmp/expense.log
+LOG = /tmp/expense.log
 
 Print_Task_Heading () {
   echo $1
