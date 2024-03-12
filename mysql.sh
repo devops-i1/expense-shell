@@ -8,11 +8,11 @@ if [ -z "${mysql_root_password}" ];  then
 fi
 
 
-Print_Task_Heading "Installing nginx"
+Print_Task_Heading "Installing MYSQL "
 dnf install mysql-server -y &>>$LOG
 Check_status $?
 
-Print_Task_Heading "Installing nginx"
+Print_Task_Heading "Start nginx"
 systemctl enable mysqld &>>$LOG
 systemctl start mysqld &>>$LOG
 Check_status $?
