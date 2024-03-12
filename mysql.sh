@@ -8,15 +8,15 @@ if [ -z "${mysql_root_password}" ];  then
 fi
 
 
-Print_Task_Heading "Installing MYSQL "
+Print_Task_Heading "Installing MYSQL server "
 dnf install mysql-server -y &>>$LOG
 Check_status $?
 
-Print_Task_Heading "Start nginx"
+Print_Task_Heading "Start MYSQL service"
 systemctl enable mysqld &>>$LOG
 systemctl start mysqld &>>$LOG
 Check_status $?
 
-Print_Task_Heading "Installing nginx"
+Print_Task_Heading "Setup MYSQL password"
 mysql_secure_installation --set-root-pass ${mysql_root_password} &>>$LOG
 Check_status $?
