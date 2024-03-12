@@ -1,7 +1,7 @@
 source common.sh
 
 Print_Task_Heading "Installing nginx"
-dnf install nginx - &>>$LOG
+dnf install nginx -y &>>$LOG
 Check_status $?
 
 Print_Task_Heading "Copy expense nginx conf file"
