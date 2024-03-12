@@ -18,7 +18,7 @@ Check_status $?
 
 Print_Task_Heading "Downloading frontend app content"
 curl -o /tmp/frontend.zip https://expense-artifacts.s3.amazonaws.com/expense-frontend-v2.zip &>>$LOG
-Check_status $
+Check_status $?
 
 Print_Task_Heading "Extract frontend app content"
 cd /usr/share/nginx/html &>>$LOG
