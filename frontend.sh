@@ -4,11 +4,6 @@ Print_Task_Heading "Installing nginx"
 dnf install nginx - &>>$LOG
 Check_status $?
 
-Print_Task_Heading "Enable & Start nginx"
-systemctl enable nginx &>>$LOG
-systemctl start nginx &>>$LOG
-Check_status $?
-
 Print_Task_Heading "Copy expense nginx conf file"
 cp expense.conf /etc/nginx/default.d/expense.conf &>>$LOG
 Check_status $?
